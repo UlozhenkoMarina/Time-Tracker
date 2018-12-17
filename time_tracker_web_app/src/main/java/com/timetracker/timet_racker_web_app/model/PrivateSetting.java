@@ -1,6 +1,7 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "private_settings", schema = "timetrackerdb")
@@ -8,6 +9,7 @@ public class PrivateSetting {
     private int id;
     private int review;
     private int groupRequests;
+    private User usersByUser;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -43,21 +45,25 @@ public class PrivateSetting {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         PrivateSetting that = (PrivateSetting) o;
-
-        if (id != that.id) return false;
-        if (review != that.review) return false;
-        if (groupRequests != that.groupRequests) return false;
-
-        return true;
+        return id == that.id &&
+                review == that.review &&
+                groupRequests == that.groupRequests;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + review;
-        result = 31 * result + groupRequests;
-        return result;
+
+        return Objects.hash(id, review, groupRequests);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false)
+    public User getUsersByUser() {
+        return usersByUser;
+    }
+
+    public void setUsersByUser(User usersByUser) {
+        this.usersByUser = usersByUser;
     }
 }

@@ -1,12 +1,15 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "contacts", schema = "timetrackerdb")
 public class Contact {
     private int id;
     private byte blocked;
+    private User usersByUserOwner;
+    private User usersByContact;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -32,19 +35,34 @@ public class Contact {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Contact contact = (Contact) o;
-
-        if (id != contact.id) return false;
-        if (blocked != contact.blocked) return false;
-
-        return true;
+        return id == contact.id &&
+                blocked == contact.blocked;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (int) blocked;
-        return result;
+
+        return Objects.hash(id, blocked);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_owner", referencedColumnName = "id", nullable = false)
+    public User getUsersByUserOwner() {
+        return usersByUserOwner;
+    }
+
+    public void setUsersByUserOwner(User usersByUserOwner) {
+        this.usersByUserOwner = usersByUserOwner;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "contact", referencedColumnName = "id", nullable = false)
+    public User getUsersByContact() {
+        return usersByContact;
+    }
+
+    public void setUsersByContact(User usersByContact) {
+        this.usersByContact = usersByContact;
     }
 }

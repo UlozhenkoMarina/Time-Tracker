@@ -1,6 +1,8 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "categories", schema = "timetrackerdb")
@@ -8,6 +10,8 @@ public class Category {
     private int id;
     private String category;
     private byte system;
+    private User user;
+    private Collection<Event> eventsById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -43,21 +47,34 @@ public class Category {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Category category1 = (Category) o;
-
-        if (id != category1.id) return false;
-        if (system != category1.system) return false;
-        if (category != null ? !category.equals(category1.category) : category1.category != null) return false;
-
-        return true;
+        return id == category1.id &&
+                system == category1.system &&
+                Objects.equals(category, category1.category);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (int) system;
-        return result;
+
+        return Objects.hash(id, category, system);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "id")
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @OneToMany(mappedBy = "categoriesByCategory")
+    public Collection<Event> getEventsById() {
+        return eventsById;
+    }
+
+    public void setEventsById(Collection<Event> eventsById) {
+        this.eventsById = eventsById;
     }
 }

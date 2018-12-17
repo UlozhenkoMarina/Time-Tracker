@@ -1,6 +1,8 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "users", schema = "timetrackerdb")
@@ -15,6 +17,16 @@ public class User {
     private String country;
     private String city;
     private Integer notifications;
+    private Collection<Category> categoriesById;
+    private Collection<Contact> contactsById;
+    private Collection<Contact> contactsById_0;
+    private Collection<DateNote> dateNotesById;
+    private Collection<Event> eventsById;
+    private Collection<GroupEventMember> groupEventMembersById;
+    private Collection<Permission> permissionsById;
+    private Collection<Permission> permissionsById_0;
+    private Collection<PrivateSetting> privateSettingsById;
+    private Collection<Template> tepmlatesById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -120,36 +132,112 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
-
-        if (id != user.id) return false;
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
-        if (mobileNumber != null ? !mobileNumber.equals(user.mobileNumber) : user.mobileNumber != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (country != null ? !country.equals(user.country) : user.country != null) return false;
-        if (city != null ? !city.equals(user.city) : user.city != null) return false;
-        if (notifications != null ? !notifications.equals(user.notifications) : user.notifications != null)
-            return false;
-
-        return true;
+        return id == user.id &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(surname, user.surname) &&
+                Objects.equals(mobileNumber, user.mobileNumber) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(country, user.country) &&
+                Objects.equals(city, user.city) &&
+                Objects.equals(notifications, user.notifications);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (username != null ? username.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (mobileNumber != null ? mobileNumber.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
-        result = 31 * result + (notifications != null ? notifications.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, username, email, name, surname, mobileNumber, password, country, city, notifications);
+    }
+
+    @OneToMany(mappedBy = "user")
+    public Collection<Category> getCategoriesById() {
+        return categoriesById;
+    }
+
+    public void setCategoriesById(Collection<Category> categoriesById) {
+        this.categoriesById = categoriesById;
+    }
+
+    @OneToMany(mappedBy = "usersByUserOwner")
+    public Collection<Contact> getContactsById() {
+        return contactsById;
+    }
+
+    public void setContactsById(Collection<Contact> contactsById) {
+        this.contactsById = contactsById;
+    }
+
+    @OneToMany(mappedBy = "usersByContact")
+    public Collection<Contact> getContactsById_0() {
+        return contactsById_0;
+    }
+
+    public void setContactsById_0(Collection<Contact> contactsById_0) {
+        this.contactsById_0 = contactsById_0;
+    }
+
+    @OneToMany(mappedBy = "usersByUser")
+    public Collection<DateNote> getDateNotesById() {
+        return dateNotesById;
+    }
+
+    public void setDateNotesById(Collection<DateNote> dateNotesById) {
+        this.dateNotesById = dateNotesById;
+    }
+
+    @OneToMany(mappedBy = "usersByUser")
+    public Collection<Event> getEventsById() {
+        return eventsById;
+    }
+
+    public void setEventsById(Collection<Event> eventsById) {
+        this.eventsById = eventsById;
+    }
+
+    @OneToMany(mappedBy = "usersByUser")
+    public Collection<GroupEventMember> getGroupEventMembersById() {
+        return groupEventMembersById;
+    }
+
+    public void setGroupEventMembersById(Collection<GroupEventMember> groupEventMembersById) {
+        this.groupEventMembersById = groupEventMembersById;
+    }
+
+    @OneToMany(mappedBy = "usersByUserOwner")
+    public Collection<Permission> getPermissionsById() {
+        return permissionsById;
+    }
+
+    public void setPermissionsById(Collection<Permission> permissionsById) {
+        this.permissionsById = permissionsById;
+    }
+
+    @OneToMany(mappedBy = "usersByUserAb")
+    public Collection<Permission> getPermissionsById_0() {
+        return permissionsById_0;
+    }
+
+    public void setPermissionsById_0(Collection<Permission> permissionsById_0) {
+        this.permissionsById_0 = permissionsById_0;
+    }
+
+    @OneToMany(mappedBy = "usersByUser")
+    public Collection<PrivateSetting> getPrivateSettingsById() {
+        return privateSettingsById;
+    }
+
+    public void setPrivateSettingsById(Collection<PrivateSetting> privateSettingsById) {
+        this.privateSettingsById = privateSettingsById;
+    }
+
+    @OneToMany(mappedBy = "usersByUser")
+    public Collection<Template> getTepmlatesById() {
+        return tepmlatesById;
+    }
+
+    public void setTepmlatesById(Collection<Template> tepmlatesById) {
+        this.tepmlatesById = tepmlatesById;
     }
 }

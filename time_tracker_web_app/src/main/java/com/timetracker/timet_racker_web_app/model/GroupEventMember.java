@@ -1,6 +1,7 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "group_event_members", schema = "timetrackerdb")
@@ -8,6 +9,8 @@ public class GroupEventMember {
     private int id;
     private byte req;
     private byte accepted;
+    private User usersByUser;
+    private GroupEvent groupEventsByEvent;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -43,21 +46,35 @@ public class GroupEventMember {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         GroupEventMember that = (GroupEventMember) o;
-
-        if (id != that.id) return false;
-        if (req != that.req) return false;
-        if (accepted != that.accepted) return false;
-
-        return true;
+        return id == that.id &&
+                req == that.req &&
+                accepted == that.accepted;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (int) req;
-        result = 31 * result + (int) accepted;
-        return result;
+
+        return Objects.hash(id, req, accepted);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false)
+    public User getUsersByUser() {
+        return usersByUser;
+    }
+
+    public void setUsersByUser(User usersByUser) {
+        this.usersByUser = usersByUser;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event", referencedColumnName = "id", nullable = false)
+    public GroupEvent getGroupEventsByEvent() {
+        return groupEventsByEvent;
+    }
+
+    public void setGroupEventsByEvent(GroupEvent groupEventsByEvent) {
+        this.groupEventsByEvent = groupEventsByEvent;
     }
 }

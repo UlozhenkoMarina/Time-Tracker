@@ -2,6 +2,8 @@ package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "event_parts", schema = "timetrackerdb")
@@ -12,6 +14,8 @@ public class EventPart {
     private Timestamp date;
     private byte done;
     private Integer duration;
+    private Collection<EventNote> eventNotesById;
+    private Event eventsByEvent;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -77,28 +81,37 @@ public class EventPart {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         EventPart eventPart = (EventPart) o;
-
-        if (id != eventPart.id) return false;
-        if (done != eventPart.done) return false;
-        if (partName != null ? !partName.equals(eventPart.partName) : eventPart.partName != null) return false;
-        if (description != null ? !description.equals(eventPart.description) : eventPart.description != null)
-            return false;
-        if (date != null ? !date.equals(eventPart.date) : eventPart.date != null) return false;
-        if (duration != null ? !duration.equals(eventPart.duration) : eventPart.duration != null) return false;
-
-        return true;
+        return id == eventPart.id &&
+                done == eventPart.done &&
+                Objects.equals(partName, eventPart.partName) &&
+                Objects.equals(description, eventPart.description) &&
+                Objects.equals(date, eventPart.date) &&
+                Objects.equals(duration, eventPart.duration);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (partName != null ? partName.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (int) done;
-        result = 31 * result + (duration != null ? duration.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, partName, description, date, done, duration);
+    }
+
+    @OneToMany(mappedBy = "eventPartsByEventPart")
+    public Collection<EventNote> getEventNotesById() {
+        return eventNotesById;
+    }
+
+    public void setEventNotesById(Collection<EventNote> eventNotesById) {
+        this.eventNotesById = eventNotesById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "event", referencedColumnName = "id", nullable = false)
+    public Event getEventsByEvent() {
+        return eventsByEvent;
+    }
+
+    public void setEventsByEvent(Event eventsByEvent) {
+        this.eventsByEvent = eventsByEvent;
     }
 }

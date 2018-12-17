@@ -1,12 +1,15 @@
 package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "permissions", schema = "timetrackerdb")
 public class Permission {
     private int id;
     private int permissionType;
+    private User usersByUserOwner;
+    private User usersByUserAb;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -32,19 +35,34 @@ public class Permission {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Permission that = (Permission) o;
-
-        if (id != that.id) return false;
-        if (permissionType != that.permissionType) return false;
-
-        return true;
+        return id == that.id &&
+                permissionType == that.permissionType;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + permissionType;
-        return result;
+
+        return Objects.hash(id, permissionType);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_owner", referencedColumnName = "id", nullable = false)
+    public User getUsersByUserOwner() {
+        return usersByUserOwner;
+    }
+
+    public void setUsersByUserOwner(User usersByUserOwner) {
+        this.usersByUserOwner = usersByUserOwner;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user_ab", referencedColumnName = "id", nullable = false)
+    public User getUsersByUserAb() {
+        return usersByUserAb;
+    }
+
+    public void setUsersByUserAb(User usersByUserAb) {
+        this.usersByUserAb = usersByUserAb;
     }
 }

@@ -2,6 +2,8 @@ package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "events", schema = "timetrackerdb")
@@ -16,7 +18,10 @@ public class Event {
     private byte notificate;
     private int duration;
     private int notFor;
+    private Collection<EventNote> eventNotesById;
+    private Collection<EventPart> eventPartsById;
     private Category categoriesByCategory;
+    private User usersByUser;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -122,36 +127,41 @@ public class Event {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Event event = (Event) o;
-
-        if (id != event.id) return false;
-        if (splitted != event.splitted) return false;
-        if (done != event.done) return false;
-        if (notificate != event.notificate) return false;
-        if (duration != event.duration) return false;
-        if (notFor != event.notFor) return false;
-        if (name != null ? !name.equals(event.name) : event.name != null) return false;
-        if (description != null ? !description.equals(event.description) : event.description != null) return false;
-        if (date != null ? !date.equals(event.date) : event.date != null) return false;
-        if (priority != null ? !priority.equals(event.priority) : event.priority != null) return false;
-
-        return true;
+        return id == event.id &&
+                splitted == event.splitted &&
+                done == event.done &&
+                notificate == event.notificate &&
+                duration == event.duration &&
+                notFor == event.notFor &&
+                Objects.equals(name, event.name) &&
+                Objects.equals(description, event.description) &&
+                Objects.equals(date, event.date) &&
+                Objects.equals(priority, event.priority);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (int) splitted;
-        result = 31 * result + (priority != null ? priority.hashCode() : 0);
-        result = 31 * result + (int) done;
-        result = 31 * result + (int) notificate;
-        result = 31 * result + duration;
-        result = 31 * result + notFor;
-        return result;
+
+        return Objects.hash(id, name, description, date, splitted, priority, done, notificate, duration, notFor);
+    }
+
+    @OneToMany(mappedBy = "eventsByEvent")
+    public Collection<EventNote> getEventNotesById() {
+        return eventNotesById;
+    }
+
+    public void setEventNotesById(Collection<EventNote> eventNotesById) {
+        this.eventNotesById = eventNotesById;
+    }
+
+    @OneToMany(mappedBy = "eventsByEvent")
+    public Collection<EventPart> getEventPartsById() {
+        return eventPartsById;
+    }
+
+    public void setEventPartsById(Collection<EventPart> eventPartsById) {
+        this.eventPartsById = eventPartsById;
     }
 
     @ManyToOne
@@ -162,5 +172,15 @@ public class Event {
 
     public void setCategoriesByCategory(Category categoriesByCategory) {
         this.categoriesByCategory = categoriesByCategory;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false)
+    public User getUsersByUser() {
+        return usersByUser;
+    }
+
+    public void setUsersByUser(User usersByUser) {
+        this.usersByUser = usersByUser;
     }
 }

@@ -2,6 +2,8 @@ package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "group_events", schema = "timetrackerdb")
@@ -17,6 +19,7 @@ public class GroupEvent {
     private Integer duration;
     private String reqsType;
     private Byte accepted;
+    private Collection<GroupEventMember> groupEventMembersById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -132,37 +135,32 @@ public class GroupEvent {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         GroupEvent that = (GroupEvent) o;
-
-        if (id != that.id) return false;
-        if (notificate != that.notificate) return false;
-        if (notFor != that.notFor) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (description != null ? !description.equals(that.description) : that.description != null) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
-        if (category != null ? !category.equals(that.category) : that.category != null) return false;
-        if (priority != null ? !priority.equals(that.priority) : that.priority != null) return false;
-        if (duration != null ? !duration.equals(that.duration) : that.duration != null) return false;
-        if (reqsType != null ? !reqsType.equals(that.reqsType) : that.reqsType != null) return false;
-        if (accepted != null ? !accepted.equals(that.accepted) : that.accepted != null) return false;
-
-        return true;
+        return id == that.id &&
+                notificate == that.notificate &&
+                notFor == that.notFor &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(date, that.date) &&
+                Objects.equals(category, that.category) &&
+                Objects.equals(priority, that.priority) &&
+                Objects.equals(duration, that.duration) &&
+                Objects.equals(reqsType, that.reqsType) &&
+                Objects.equals(accepted, that.accepted);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (priority != null ? priority.hashCode() : 0);
-        result = 31 * result + (int) notificate;
-        result = 31 * result + notFor;
-        result = 31 * result + (duration != null ? duration.hashCode() : 0);
-        result = 31 * result + (reqsType != null ? reqsType.hashCode() : 0);
-        result = 31 * result + (accepted != null ? accepted.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, name, description, date, category, priority, notificate, notFor, duration, reqsType, accepted);
+    }
+
+    @OneToMany(mappedBy = "groupEventsByEvent")
+    public Collection<GroupEventMember> getGroupEventMembersById() {
+        return groupEventMembersById;
+    }
+
+    public void setGroupEventMembersById(Collection<GroupEventMember> groupEventMembersById) {
+        this.groupEventMembersById = groupEventMembersById;
     }
 }

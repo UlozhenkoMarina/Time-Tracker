@@ -2,6 +2,7 @@ package com.timetracker.timet_racker_web_app.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
 @Table(name = "date_notes", schema = "timetrackerdb")
@@ -10,6 +11,7 @@ public class DateNote {
     private String shortName;
     private String note;
     private Timestamp date;
+    private User usersByUser;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -55,23 +57,26 @@ public class DateNote {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         DateNote dateNote = (DateNote) o;
-
-        if (id != dateNote.id) return false;
-        if (shortName != null ? !shortName.equals(dateNote.shortName) : dateNote.shortName != null) return false;
-        if (note != null ? !note.equals(dateNote.note) : dateNote.note != null) return false;
-        if (date != null ? !date.equals(dateNote.date) : dateNote.date != null) return false;
-
-        return true;
+        return id == dateNote.id &&
+                Objects.equals(shortName, dateNote.shortName) &&
+                Objects.equals(note, dateNote.note) &&
+                Objects.equals(date, dateNote.date);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (shortName != null ? shortName.hashCode() : 0);
-        result = 31 * result + (note != null ? note.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, shortName, note, date);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "user", referencedColumnName = "id", nullable = false)
+    public User getUsersByUser() {
+        return usersByUser;
+    }
+
+    public void setUsersByUser(User usersByUser) {
+        this.usersByUser = usersByUser;
     }
 }
