@@ -1,9 +1,13 @@
 package com.timetracker.timet_racker_web_app.dao.service;
 
+import com.timetracker.timet_racker_web_app.dao.repository.ContactRepository;
 import com.timetracker.timet_racker_web_app.dao.repository.UserRepository;
+import com.timetracker.timet_racker_web_app.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.timetracker.timet_racker_web_app.model.User;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 
 @Service
@@ -11,6 +15,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ContactRepository contactRepository;
 
     public User addUser(User user) {
         try {
@@ -51,5 +58,17 @@ public class UserService {
         } else {
             return null;
         }
+    }
+
+    public List<Contact> getContacts(User user) {
+        return contactRepository.getAllByUsersByUserOwner(user);
+    }
+
+    public void addContact(User userOwner, long idUserToAdd) {
+        Contact contact = new Contact();
+        contact.setUsersByUserOwner(userOwner);
+        User user = userRepository.getUserById(idUserToAdd);
+        contact.setUsersByContact(user);
+        contactRepository.save(contact);
     }
 }

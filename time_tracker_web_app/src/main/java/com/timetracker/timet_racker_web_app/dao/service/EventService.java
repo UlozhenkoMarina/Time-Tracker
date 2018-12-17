@@ -82,6 +82,7 @@ public class EventService {
     }
 
     public List<DateNote> getDateNotes(User user, Timestamp date) {
+        List<DateNote> list = dateNoteRepository.getAllByUsersByUserAndDate(user, date);
         return dateNoteRepository.getAllByUsersByUserAndDate(user, date);
     }
 }
