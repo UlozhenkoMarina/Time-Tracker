@@ -32,29 +32,53 @@ public class EventService {
     }
 
     public List<Category> getSystemCategories() {
-        return categoryRepository.getAllBySystem((byte)1);
+        try {
+            return categoryRepository.getAllBySystem((byte) 1);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<Category> getUserCategories(int id) {
-        User user = userRepository.findById(id).get();
-        return (List<Category>) user.getCategoriesById();
+        try {
+            User user = userRepository.findById(id).get();
+            return (List<Category>) user.getCategoriesById();
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<Event> getEventsByCategoryAndDate(User user, Category category, Timestamp date) {
-        return  eventRepository.getAllByDateAndUsersByUserAndCategoriesByCategory(date, user, category);
+        try {
+            return eventRepository.getAllByDateAndUsersByUserAndCategoriesByCategory(date, user, category);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<Event> getEventsByCategory(User user, Category category) {
-        return eventRepository.getAllByUsersByUserAndCategoriesByCategory(user, category);
+        try {
+            return eventRepository.getAllByUsersByUserAndCategoriesByCategory(user, category);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<Event> getEventsByDate(User user, Timestamp date) {
-        return eventRepository.getAllByUsersByUserAndDate(user, date);
+        try {
+            return eventRepository.getAllByUsersByUserAndDate(user, date);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<Event> getEvents(User user) {
-        user = userRepository.findById(user.getId()).get();
-        return eventRepository.getAllByUsersByUser(user);
+        try {
+            user = userRepository.findById(user.getId()).get();
+            return eventRepository.getAllByUsersByUser(user);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public void updateEvent(Event event) {
@@ -90,11 +114,19 @@ public class EventService {
     }
 
     public List<DateNote> getDateNotes(User user) {
-        return dateNoteRepository.getAllByUsersByUser(user);
+        try {
+            return dateNoteRepository.getAllByUsersByUser(user);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public List<DateNote> getDateNotes(User user, Timestamp date) {
-        List<DateNote> list = dateNoteRepository.getAllByUsersByUserAndDate(user, date);
-        return dateNoteRepository.getAllByUsersByUserAndDate(user, date);
+        try {
+            List<DateNote> list = dateNoteRepository.getAllByUsersByUserAndDate(user, date);
+            return dateNoteRepository.getAllByUsersByUserAndDate(user, date);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 }
