@@ -1,9 +1,12 @@
 package com.timetracker.timet_racker_web_app.controller;
 
 
+import com.timetracker.timet_racker_web_app.dao.service.EventService;
 import com.timetracker.timet_racker_web_app.dao.service.UserService;
+import com.timetracker.timet_racker_web_app.form.EventForm;
 import com.timetracker.timet_racker_web_app.form.LoginForm;
 import com.timetracker.timet_racker_web_app.form.RegisterForm;
+import com.timetracker.timet_racker_web_app.model.Event;
 import com.timetracker.timet_racker_web_app.model.GroupEvent;
 import com.timetracker.timet_racker_web_app.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,9 @@ import java.util.List;
 
 @Controller
 public class UserController {
+
+    @Autowired
+    private EventService eventService;
 
     private User user=null;
 
@@ -129,5 +135,30 @@ public class UserController {
             model.addAttribute("User", user);
         }
         return "userCabinet";
+    }
+
+    @RequestMapping(value = {"/createEvent"},method = RequestMethod.POST)
+    public String createEvent(Model model, EventForm form) {
+        Event event = new Event();
+        // event.setCategoriesByCategory(form.getCategoriesByCategory());
+        //event.setUsersByUser(user);
+        event.setDate(form.getDate());
+        event.setDescription(form.getDescription());
+        event.setDone((byte)0);
+        //    event.setDone(form.getDone());
+        event.setDuration(form.getDuration());
+        event.setEventNotesById(form.getEventNotesById());
+        event.setName(form.getName());
+        event.setPriority(form.getPriority());
+        eventService.addEvent(user,event,form.getCategoriesByCategory());
+        return "success";
+    }
+
+
+    @RequestMapping(value={"/getEvents"},method=RequestMethod.GET)
+    public String getEvents(Model model){
+        if (user!=null)
+            model.addAttribute("allEvents",eventService.getEvents(user));
+        return "event";
     }
 }

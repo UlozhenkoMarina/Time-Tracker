@@ -29,7 +29,15 @@
 <body>
 <jsp:include page="navbar.jsp" />
 <div class="container">
-    <a href="#">Add event</a>
+
+    <div class="form-group">
+        <form action="/createEvent" object="${createForm}" method="POST">
+            <input name="name" type="text" field="*{name}" class="form-control"
+                   placeholder="Name"/>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+        </form>
+    </div>
 
     <table class="table">
         <thead>
@@ -43,12 +51,12 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${list}" var="item">
+        <c:forEach items="${allEvents}" var="item">
             <tr>
                 <td><c:out value="${item.name}"/></td>
                 <td><c:out value="${item.priority}"/></td>
                 <td><c:out value="${item.description}"/></td>
-                <td><c:out value="${item.data}"/></td>
+                <td><c:out value="${item.date}"/></td>
             </tr>
         </c:forEach>
 

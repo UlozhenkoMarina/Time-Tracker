@@ -21,32 +21,7 @@ private EventService eventService;
 public String CreateEventForm(Model model){
     EventForm form=new EventForm();
     model.addAttribute("EventForm",form);
-    return "createEvent";
-}
-
-
-@RequestMapping(value = {"/createEvent"},method = RequestMethod.POST)
-public String createEvent(Model model, EventForm form,User user) {
-    Event event = new Event();
-   // event.setCategoriesByCategory(form.getCategoriesByCategory());
-    //event.setUsersByUser(user);
-    event.setDate(form.getDate());
-    event.setDescription(form.getDescription());
-    event.setDone(form.getDone());
-    event.setDuration(form.getDuration());
-    event.setEventNotesById(form.getEventNotesById());
-    event.setName(form.getName());
-    event.setPriority(form.getPriority());
-    eventService.addEvent(user,event,form.getCategoriesByCategory());
     return "success";
-}
-
-
-    @RequestMapping(value={"/getEvents"},method=RequestMethod.GET)
-    public String getEvents(Model model, User user){
-    if (user!=null)
-        model.addAttribute("allEvents",eventService.getEvents(user));
-    return "event";
 }
 
     @RequestMapping(value="/getEventsByCategoryAndDate",method=RequestMethod.GET)

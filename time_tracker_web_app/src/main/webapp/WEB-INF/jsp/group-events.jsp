@@ -43,7 +43,7 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${list}" var="item">
+        <c:forEach items="${allEvents}" var="item">
             <tr>
                 <td><c:out value="${item.name}"/></td>
                 <td><c:out value="${item.priority}"/></td>
