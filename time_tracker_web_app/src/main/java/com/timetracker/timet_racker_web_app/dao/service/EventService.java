@@ -87,7 +87,7 @@ public class EventService {
 
     public void addEvent(User user, Event event, Category category) {
         event.setUsersByUser(user);
-        if(category != null) {
+        if (category != null) {
             event.setCategoriesByCategory(category);
         }
         eventRepository.save(event);

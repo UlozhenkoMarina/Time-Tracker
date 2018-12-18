@@ -30,38 +30,28 @@
 
 <div class="container">
 
-    <form method="POST" action="${contextPath}/userCabinet" class="form-signin">
+    <form method="POST" action="${contextPath}/userCabinetModify" class="form-signin">
         <h2 class="form-heading">Change information about yourself</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <form action="@{/signup" object="${User}" method="POST">
+            <form action="@{/signup" object="${registerForm}" method="POST">
                 <span>${message}</span>
-                <br>
-                <span> Your email: </span>
-                <span> ${User.email} </span>
-                <br>
-                <span> Your username:</span>
-                <span>${User.username}</span>
-                <br>
-                <span> Your name:</span>
-                <span>${User.name}" </span>
-                <br>
-                <span> Your surname:</span>
-                <span>${User.surname}</span>
-                <br>
-                <span>Your phone:</span>
-                <span>${User.mobileNumber}</span>
-                <br>
-                <span>Your country:</span>
-                <span>${User.country}</span>
-                <br>
-                <span>Your city:</span>
-                <span>${User.city}</span>
-                <br>
-                <span>Your password</span>
-                <span>${password}</span>
+                <input name="email" type="text" field="*{email}" class="form-control" placeholder="Email"
+                       autofocus="true"/>
+                <input name="username" type="text" field="*{username}" class="form-control" placeholder="Username"
+                       autofocus="true"/>
+                <input name="name" type="text" field="*{name}" class="form-control" placeholder="Name"
+                       autofocus="true"/>
+                <input name="surname" type="text" field="*{surname}" class="form-control" placeholder="Surname"
+                       autofocus="true"/>
+                <input name="phone" type="text" field="*{phone}" class="form-control" placeholder="Phone"
+                       autofocus="true"/>
+                <input name="country" type="text" field="*{country}" class="form-control" placeholder="Country"
+                       autofocus="true"/>
+                <input name="city" type="text" field="*{city}" class="form-control" placeholder="City"
+                       autofocus="true"/>
+                <input name="password" type="password" field="*{password}" class="form-control" placeholder="Password"/>
                 <span>${error}</span>
-
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>

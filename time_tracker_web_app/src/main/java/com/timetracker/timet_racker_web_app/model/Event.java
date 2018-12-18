@@ -165,7 +165,7 @@ public class Event {
     }
 
     @ManyToOne
-    @JoinColumn(name = "category", referencedColumnName = "id")
+    @JoinColumn(name = "category", referencedColumnName = "id", nullable = true)
     public Category getCategoriesByCategory() {
         return categoriesByCategory;
     }

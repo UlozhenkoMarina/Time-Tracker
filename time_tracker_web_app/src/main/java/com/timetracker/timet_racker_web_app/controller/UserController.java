@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import java.util.List;
 
 
 @Controller
@@ -18,15 +17,8 @@ public class UserController {
 
     private User user=null;
 
-
-
     @Autowired
     private UserService userService;
-
-//    @RequestMapping(value ="/get",method = RequestMethod.GET)
-//    public void get(){
-//        System.out.print(user.get);
-//    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String viewLoginPage(Model model) {
@@ -103,8 +95,7 @@ public class UserController {
         user.setUsername(form.getUsername());
         user.setCountry(form.getCountry());
         user.setCity(form.getCity());
-        //user = userService.addUser(user);
-        user=userService.updateUser(user);
+        user = userService.addUser(user);
         if (user == null) {
             return "registerPage";
         } else {
@@ -122,15 +113,15 @@ public class UserController {
         System.out.println(form.getEmail());
         //User user = new User();
         //user=new User();
-//        user.getPassword();
-//        user.getMobileNumber();
-//        user.getEmail();
-//        user.getName();
-//        user.getSurname();
-//        user.getUsername();
-//        user.getCountry();
-//        user.getCity();
-        //user = userService.addUser(user);
+        user.getPassword();
+        user.getMobileNumber();
+        user.getEmail();
+        user.getName();
+        user.getSurname();
+        user.getUsername();
+        user.getCountry();
+        user.getCity();
+        user = userService.addUser(user);
         if (user == null) {
             return "registerPage";
         } else {
@@ -138,58 +129,4 @@ public class UserController {
         }
         return "userCabinet";
     }
-
-
-
-    @RequestMapping(value="/getUserByEmail",method = RequestMethod.GET)
-    public String getUserByEmail(Model model,RegisterForm form){
-        model.addAttribute("userByEmail",userService.getUser(form.getEmail()));
-        return "success";
-    }
-
-
-    @RequestMapping(value="/getUserName",method = RequestMethod.GET)
-    public String getUserByName(Model model,RegisterForm form){
-        model.addAttribute("userByName",userService.getUserByUername(form.getUsername()));
-        return "success";
-    }
-
-    @RequestMapping(value="/getContacts",method = RequestMethod.GET)
-    public String getContacts(Model model,RegisterForm form){
-        User users=new User();
-        users.setPassword(form.getPassword());
-        users.setMobileNumber(form.getPhone());
-        users.setEmail(form.getEmail());
-        users.setName(form.getName());
-        users.setSurname(form.getSurname());
-        users.setUsername(form.getUsername());
-        users.setCountry(form.getCountry());
-        users.setCity(form.getCity());
-        model.addAttribute("contacts",userService.getContacts(users));
-        return "success";
-    }
-
-    @RequestMapping(value="/addContacts",method = RequestMethod.POST)
-    public String addContacts(Model model,RegisterForm form){
-        userService.addContact(user,userService.getUserByUername(form.getUsername()).getId());
-        return "success";
-    }
-
-    @RequestMapping(value="/getByName",method = RequestMethod.GET)
-    public String getByName(Model model,RegisterForm form){
-        model.addAttribute("UserGetByName",userService.getUserByUername(form.getUsername()));
-        return "success";
-    }
-
-
-    //get user name by email
-    //ad contact
-
-    @RequestMapping(value = "/getContacts", method = RequestMethod.GET)
-    public String getContacts(Model model) {
-        List<User> contacts = userService.getContactsUser(user);
-        model.addAttribute("contacts", contacts);
-        return "contacts";
-    }
-
 }

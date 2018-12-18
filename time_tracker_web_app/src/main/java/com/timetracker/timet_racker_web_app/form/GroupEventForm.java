@@ -13,6 +13,7 @@ public class GroupEventForm {
     private Integer priority;
     private Integer duration;
     private List<User> members;
+    private int[] checked;
 
     public String getName() {
         return name;
@@ -68,5 +69,14 @@ public class GroupEventForm {
 
     public void setMembers(List<User> members) {
         this.members = members;
+        this.checked = new int[members.size()];
+    }
+
+    public int[] getChecked() {
+        return checked;
+    }
+
+    public void setChecked(int[] checked) {
+        this.checked = checked;
     }
 }
