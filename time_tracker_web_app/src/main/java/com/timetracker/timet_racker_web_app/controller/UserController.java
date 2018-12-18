@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.List;
 
 
 @Controller
@@ -184,14 +185,11 @@ public class UserController {
     //get user name by email
     //ad contact
 
-<<<<<<< HEAD
     @RequestMapping(value = "/getContacts", method = RequestMethod.GET)
     public String getContacts(Model model) {
         List<User> contacts = userService.getContactsUser(user);
         model.addAttribute("contacts", contacts);
         return "contacts";
     }
-=======
->>>>>>> 6843c33f5bae74850072c470572ff8b1bf50fbed
 
 }
