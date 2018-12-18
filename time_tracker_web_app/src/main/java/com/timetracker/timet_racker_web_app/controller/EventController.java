@@ -30,13 +30,24 @@ public String createEvent(Model model, EventForm form,User user) {
 }
 
 
+@RequestMapping(value="/getEvents",method=RequestMethod.GET)
+    public String getEvents(Model model, User user){
+    model.addAllAttributes(eventService.getEvents(user));
+    return "success";
+}
+
+    @RequestMapping(value="/getEventsByCategoryAndDate",method=RequestMethod.GET)
+    public String getEventsByCategoryAndDate(Model model, User user,EventForm form){
+        model.addAllAttributes(eventService.getEventsByCategoryAndDate(user,form.getCategoriesByCategory(),form.getDate()));
+        return "success";
+    }
 
 
-
-
-
-
-
+    @RequestMapping(value="/getEventsByCategory",method=RequestMethod.GET)
+    public String getEventsByCategory(Model model, User user,EventForm form){
+        model.addAllAttributes(eventService.getEventsByCategory(user,form.getCategoriesByCategory()));
+        return "success";
+    }
 
 
 }
