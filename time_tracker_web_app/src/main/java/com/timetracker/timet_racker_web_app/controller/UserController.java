@@ -81,7 +81,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = { "/userCabinetModify"}, method = RequestMethod.POST)
+    @RequestMapping(value = { "/userCabinet"}, method = RequestMethod.POST)
     public String userCabinetModify(Model model, RegisterForm form) {
 
         System.out.println(form.getEmail());
@@ -89,10 +89,8 @@ public class UserController {
         //user=new User();
         user.setPassword(form.getPassword());
         user.setMobileNumber(form.getPhone());
-        user.setEmail(form.getEmail());
         user.setName(form.getName());
         user.setSurname(form.getSurname());
-        user.setUsername(form.getUsername());
         user.setCountry(form.getCountry());
         user.setCity(form.getCity());
         user = userService.addUser(user);
@@ -107,7 +105,7 @@ public class UserController {
 
 
 
-    @RequestMapping(value = { "/userCabinet"}, method = RequestMethod.POST)
+    @RequestMapping(value = { "/userCabinet"}, method = RequestMethod.GET)
     public String userCabinet(Model model, RegisterForm form) {
 
         System.out.println(form.getEmail());

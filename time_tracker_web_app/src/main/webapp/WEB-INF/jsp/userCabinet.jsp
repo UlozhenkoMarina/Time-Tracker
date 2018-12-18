@@ -33,7 +33,7 @@
     <form method="POST" action="${contextPath}/userCabinet" class="form-signin">
         <h2 class="form-heading">Change information about yourself</h2>
 
-        <div class="form-group ${error != null ? 'has-error' : ''}">
+  <!--      <div class="form-group ${error != null ? 'has-error' : ''}">
             <form action="@{/signup" object="${User}" method="POST">
                 <span>${message}</span>
                 <br>
@@ -67,7 +67,36 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
             </form>
         </div>
+-->
 
+
+        <div class="form-group ${error != null ? 'has-error' : ''}">
+            <form action="@{/signup" object="${registerForm}" method="POST">
+                <span>${message}</span>
+                <span> Your email: </span>
+                <span> ${User.email} </span>
+                <br>
+                <span> Your username:</span>
+                <span>${User.username}</span>
+                <br>
+                <input name="name" type="text" field="*{name}" class="form-control" placeholder="Name"
+                       autofocus="true" value="${User.name}"/>
+                <input name="surname" type="text" field="*{surname}" class="form-control" placeholder="Surname"
+                       autofocus="true" value="${User.surname}"/>
+                <input name="phone" type="text" field="*{phone}" class="form-control" placeholder="Phone"
+                       autofocus="true" value="${User.mobileNumber}"/>
+                <input name="country" type="text" field="*{country}" class="form-control" placeholder="Country"
+                       autofocus="true" value="${User.country}"/>
+                <input name="city" type="text" field="*{city}" class="form-control" placeholder="City"
+                       autofocus="true" value="${User.city}"/>
+                <input name="password" type="password" field="*{password}" class="form-control"
+                       placeholder="Password" value="${User.password}"/>
+                <span>${error}</span>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+            </form>
+        </div>
     </form>
 
 </div>
