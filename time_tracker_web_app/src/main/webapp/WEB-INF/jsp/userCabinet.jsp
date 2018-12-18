@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+<jsp:include page="navbar.jsp" />
 <div class="container">
 
     <form method="POST" action="${contextPath}/userCabinet" class="form-signin">

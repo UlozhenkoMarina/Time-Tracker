@@ -54,7 +54,7 @@ public class UserService {
         }
         if (user != null) {
             userRepository.save(user);
-            return userRepository.getUserById(user.getId());
+            return userRepository.findById(user.getId()).get();
         } else {
             return null;
         }
