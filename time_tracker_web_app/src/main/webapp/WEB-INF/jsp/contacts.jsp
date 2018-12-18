@@ -30,6 +30,15 @@
 <jsp:include page="navbar.jsp" />
 <div class="container">
 
+    <div class="form-group ${error != null ? 'has-error' : ''}">
+        <form action="/getUser" object="${getForm}" method="GET">
+            <input name="username" type="text" field="*{username}" class="form-control" placeholder="Username"
+                   autofocus="true" />
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Add Contact</button>
+        </form>
+    </div>
+
     <input type="text" class="form-control pull-right" style="width:20%" id="search"
            placeholder="Type to search table...">
 
