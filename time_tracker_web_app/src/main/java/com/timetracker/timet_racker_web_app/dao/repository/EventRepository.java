@@ -8,11 +8,10 @@ import org.springframework.data.repository.CrudRepository;
 import java.sql.Timestamp;
 import java.util.List;
 
-public interface EventRepository extends CrudRepository<Event, Long> {
+public interface EventRepository extends CrudRepository<Event, Integer> {
 
     public List<Event> getAllByDateAndUsersByUserAndCategoriesByCategory(Timestamp date, User user, Category category);
     public List<Event> getAllByUsersByUserAndCategoriesByCategory(User user, Category category);
     public List<Event> getAllByUsersByUserAndDate(User user, Timestamp date);
     public List<Event> getAllByUsersByUser(User user);
-    public Event getById(long id);
 }

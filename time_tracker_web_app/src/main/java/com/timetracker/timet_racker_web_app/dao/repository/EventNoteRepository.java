@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface EventNoteRepository extends CrudRepository<EventNote, Long> {
+public interface EventNoteRepository extends CrudRepository<EventNote, Integer> {
     public List<EventNote> getAllByEventsByEvent(Event event);
 }

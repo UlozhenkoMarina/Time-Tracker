@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface ContactRepository extends CrudRepository<Contact, Long> {
+public interface ContactRepository extends CrudRepository<Contact, Integer> {
     public List<Contact> getAllByUsersByUserOwner(User user);
     public List<Contact> getAllByUsersByUserOwnerAndBlocked(User user, byte blocked);
 }

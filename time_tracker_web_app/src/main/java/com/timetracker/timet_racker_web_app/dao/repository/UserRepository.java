@@ -8,5 +8,4 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     public User getUserByEmailAndPassword(String email, String password);
     public User getUserByEmail(String email);
     public User getUserByUsername(String username);
-    public User getUserById(long id);
 }

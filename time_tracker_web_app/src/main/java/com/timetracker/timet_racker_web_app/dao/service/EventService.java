@@ -35,8 +35,8 @@ public class EventService {
         return categoryRepository.getAllBySystem((byte)1);
     }
 
-    public List<Category> getUserCategories(long id) {
-        User user = userRepository.getUserById(id);
+    public List<Category> getUserCategories(int id) {
+        User user = userRepository.findById(id).get();
         return (List<Category>) user.getCategoriesById();
     }
 
@@ -53,7 +53,7 @@ public class EventService {
     }
 
     public List<Event> getEvents(User user) {
-        user = userRepository.getUserById(user.getId());
+        user = userRepository.findById(user.getId()).get();
         return eventRepository.getAllByUsersByUser(user);
     }
 
