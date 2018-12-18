@@ -44,8 +44,8 @@ public class UserService {
         return user;
     }
 
-    public User getUser(long id) {
-        return userRepository.getUserById(id);
+    public User getUser(int id) {
+        return userRepository.findById(id).get();
     }
 
     public User updateUser(User user) {
@@ -54,7 +54,7 @@ public class UserService {
         }
         if (user != null) {
             userRepository.save(user);
-            return userRepository.getUserById(user.getId());
+            return userRepository.findById(user.getId()).get();
         } else {
             return null;
         }
@@ -64,10 +64,10 @@ public class UserService {
         return contactRepository.getAllByUsersByUserOwner(user);
     }
 
-    public void addContact(User userOwner, long idUserToAdd) {
+    public void addContact(User userOwner, int idUserToAdd) {
         Contact contact = new Contact();
         contact.setUsersByUserOwner(userOwner);
-        User user = userRepository.getUserById(idUserToAdd);
+        User user = userRepository.findById(idUserToAdd).get();
         contact.setUsersByContact(user);
         contactRepository.save(contact);
     }

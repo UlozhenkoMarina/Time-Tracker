@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface GroupEventMemberRepository extends CrudRepository<GroupEventMember, Long> {
+public interface GroupEventMemberRepository extends CrudRepository<GroupEventMember, Integer> {
     public List<GroupEventMember> getAllByUsersByUser(User user);
     public List<GroupEventMember> getAllByGroupEventsByEvent(GroupEvent event);
     public List<GroupEventMember> getAllByUsersByUserAndAccepted(User user, byte accepted);

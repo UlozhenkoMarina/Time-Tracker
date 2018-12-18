@@ -25,7 +25,7 @@ public class GroupEventService {
         List<GroupEventMember>  members = memberRepository.getAllByUsersByUser(user);
         List<GroupEvent> groupEvents = new ArrayList<>();
         for (GroupEventMember m : members) {
-            groupEvents.add(groupEventRepository.getGroupEventById(m.getGroupEventsByEvent().getId()));
+            groupEvents.add(groupEventRepository.findById(m.getGroupEventsByEvent().getId()).get());
         }
         return groupEvents;
     }
@@ -34,7 +34,7 @@ public class GroupEventService {
         List<GroupEventMember>  members = memberRepository.getAllByUsersByUserAndAccepted(user, (byte)0);
         List<GroupEvent> groupEvents = new ArrayList<>();
         for (GroupEventMember m : members) {
-            groupEvents.add(groupEventRepository.getGroupEventById(m.getGroupEventsByEvent().getId()));
+            groupEvents.add(groupEventRepository.findById(m.getGroupEventsByEvent().getId()).get());
         }
         return groupEvents;
     }
@@ -43,7 +43,7 @@ public class GroupEventService {
         List<GroupEventMember>  members = memberRepository.getAllByUsersByUser(user);
         List<GroupEvent> groupEvents = new ArrayList<>();
         for (GroupEventMember m : members) {
-            GroupEvent groupEvent = groupEventRepository.getGroupEventById(m.getGroupEventsByEvent().getId());
+            GroupEvent groupEvent = groupEventRepository.findById(m.getGroupEventsByEvent().getId()).get();
             if (groupEvent.getAccepted() == (byte)1) {
                 groupEvents.add(groupEvent);
             }
@@ -73,7 +73,7 @@ public class GroupEventService {
             }
         }
         if (flag) {
-            GroupEvent event = groupEventRepository.getGroupEventById(groupEvent.getId());
+            GroupEvent event = groupEventRepository.findById(groupEvent.getId()).get();
             event.setAccepted((byte)1);
             groupEventRepository.save(event);
         }
