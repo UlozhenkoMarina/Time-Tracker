@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.timetracker.timet_racker_web_app.model.User;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -30,22 +31,38 @@ public class UserService {
     }
 
     public User getUser(String email, String password) {
-        User user = userRepository.getUserByEmailAndPassword(email, password);
-        return user;
+        try {
+            User user = userRepository.getUserByEmailAndPassword(email, password);
+            return user;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public User getUser(String email) {
-        User user = userRepository.getUserByEmail(email);
-        return user;
+        try {
+            User user = userRepository.getUserByEmail(email);
+            return user;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public User getUserByUername(String username) {
-        User user = userRepository.getUserByUsername(username);
-        return user;
+        try {
+            User user = userRepository.getUserByUsername(username);
+            return user;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public User getUser(int id) {
-        return userRepository.findById(id).get();
+        try {
+            return userRepository.findById(id).get();
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public User updateUser(User user) {
@@ -61,14 +78,34 @@ public class UserService {
     }
 
     public List<Contact> getContacts(User user) {
-        return contactRepository.getAllByUsersByUserOwner(user);
+        try {
+            return contactRepository.getAllByUsersByUserOwner(user);
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    public List<User> getContactsUser(User user) {
+        try {
+            List<Contact> contacts = getContacts(user);
+            List<User> users = new ArrayList<>();
+            for (Contact contact : contacts) {
+                users.add(contact.getUsersByContact());
+            }
+            return users;
+        } catch (Exception ex) {
+            return null;
+        }
     }
 
     public void addContact(User userOwner, int idUserToAdd) {
-        Contact contact = new Contact();
-        contact.setUsersByUserOwner(userOwner);
-        User user = userRepository.findById(idUserToAdd).get();
-        contact.setUsersByContact(user);
-        contactRepository.save(contact);
+        try {
+            Contact contact = new Contact();
+            contact.setUsersByUserOwner(userOwner);
+            User user = userRepository.findById(idUserToAdd).get();
+            contact.setUsersByContact(user);
+            contactRepository.save(contact);
+        } catch (Exception ex) {
+        }
     }
 }
