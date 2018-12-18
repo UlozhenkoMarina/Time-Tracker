@@ -4,17 +4,20 @@ import com.timetracker.timet_racker_web_app.dao.service.EventService;
 import com.timetracker.timet_racker_web_app.form.EventForm;
 import com.timetracker.timet_racker_web_app.model.Event;
 import com.timetracker.timet_racker_web_app.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+@Controller
 public class EventController {
 
-
+@Autowired
 private EventService eventService;
 
 
-@RequestMapping(value ="CreateEventForm",method = RequestMethod.GET)
+@RequestMapping(value ="/CreateEventForm",method = RequestMethod.GET)
 public String CreateEventForm(Model model){
     EventForm form=new EventForm();
     model.addAttribute("EventForm",form);
@@ -39,16 +42,11 @@ public String createEvent(Model model, EventForm form,User user) {
 }
 
 
-@RequestMapping(value="/getEvents",method=RequestMethod.GET)
+    @RequestMapping(value={"/getEvents"},method=RequestMethod.GET)
     public String getEvents(Model model, User user){
-<<<<<<< HEAD
-    model.addAllAttributes(eventService.getEvents(user));
-    return "event";
-=======
     if (user!=null)
         model.addAttribute("allEvents",eventService.getEvents(user));
-    return "success";
->>>>>>> 988076e6652f2d794d3df9d8f50a0ea7fc783034
+    return "event";
 }
 
     @RequestMapping(value="/getEventsByCategoryAndDate",method=RequestMethod.GET)

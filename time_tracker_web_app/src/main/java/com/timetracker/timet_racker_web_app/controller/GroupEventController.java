@@ -43,7 +43,7 @@ public class GroupEventController {
     public String showGroupEvents(Model model, User user) {
         List<GroupEvent> groupEvents = groupEventService.getGroupEvents(user);
         model.addAttribute("groupEvents", groupEvents);
-        return  "success";
+        return  "group-events";
     }
 
 
