@@ -14,4 +14,5 @@ public interface EventRepository extends CrudRepository<Event, Long> {
     public List<Event> getAllByUsersByUserAndCategoriesByCategory(User user, Category category);
     public List<Event> getAllByUsersByUserAndDate(User user, Timestamp date);
     public List<Event> getAllByUsersByUser(User user);
+    public Event getById(long id);
 }

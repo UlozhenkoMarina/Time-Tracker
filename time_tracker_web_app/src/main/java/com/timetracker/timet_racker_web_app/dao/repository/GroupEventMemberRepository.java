@@ -11,4 +11,5 @@ public interface GroupEventMemberRepository extends CrudRepository<GroupEventMem
     public List<GroupEventMember> getAllByUsersByUser(User user);
     public List<GroupEventMember> getAllByGroupEventsByEvent(GroupEvent event);
     public List<GroupEventMember> getAllByUsersByUserAndAccepted(User user, byte accepted);
+    public GroupEventMember getByUsersByUserAndGroupEventsByEvent(User user, GroupEvent event);
 }

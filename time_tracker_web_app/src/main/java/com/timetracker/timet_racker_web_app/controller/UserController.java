@@ -43,7 +43,6 @@ public class UserController {
 
     @RequestMapping(value = { "/logout" }, method = RequestMethod.POST)
     public String logout(Model model, LoginForm form) {
-
         System.out.println(form.getEmail());
         user = userService.getUser(form.getEmail(), form.getPassword());
         user=null;

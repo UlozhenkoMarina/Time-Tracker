@@ -57,6 +57,10 @@ public class EventService {
         return eventRepository.getAllByUsersByUser(user);
     }
 
+    public void updateEvent(Event event) {
+        eventRepository.save(event);
+    }
+
     public void addEvent(User user, Event event, Category category) {
         event.setUsersByUser(user);
         event.setCategoriesByCategory(category);
@@ -68,12 +72,20 @@ public class EventService {
         eventNoteRepository.save(note);
     }
 
+    public void updateEventNote(EventNote note) {
+        eventNoteRepository.save(note);
+    }
+
     public List<EventNote> getEventNotes(Event event) {
         return eventNoteRepository.getAllByEventsByEvent(event);
     }
 
     public void addDateNote(User user, DateNote note) {
         note.setUsersByUser(user);
+        dateNoteRepository.save(note);
+    }
+
+    public void updateDateNote(DateNote note) {
         dateNoteRepository.save(note);
     }
 
