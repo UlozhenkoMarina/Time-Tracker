@@ -17,26 +17,6 @@ public class EventController {
 private EventService eventService;
 
 
-@RequestMapping(value ="/CreateEventForm",method = RequestMethod.GET)
-public String CreateEventForm(Model model){
-    EventForm form=new EventForm();
-    model.addAttribute("EventForm",form);
-    return "success";
-}
-
-    @RequestMapping(value="/getEventsByCategoryAndDate",method=RequestMethod.GET)
-    public String getEventsByCategoryAndDate(Model model, User user,EventForm form){
-        model.addAttribute("EventsByCategoryAndDate",eventService.getEventsByCategoryAndDate(user,form.getCategoriesByCategory(),form.getDate()));
-        return "success";
-    }
-
-
-    @RequestMapping(value="/getEventsByCategory",method=RequestMethod.GET)
-    public String getEventsByCategory(Model model, User user,EventForm form){
-        model.addAttribute("EventsByCategory",eventService.getEventsByCategory(user,form.getCategoriesByCategory()));
-        return "success";
-    }
-
 
 //    @RequestMapping(value="/createCategory",method = RequestMethod.POST)
 //    public String createCategory(Model model){

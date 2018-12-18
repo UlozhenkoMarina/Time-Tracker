@@ -4,9 +4,8 @@
     <list default="true" id="455aa7a0-7387-4652-8377-8f3ac5bb0252" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,20 +19,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+            <state relative-caret-position="1428">
+              <caret line="217" column="55" selection-start-line="217" selection-start-column="55" selection-end-line="217" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
+            <state relative-caret-position="418">
+              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,11 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+            <state relative-caret-position="302">
+              <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="833">
+              <caret line="49" column="61" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -62,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="52" />
+            <state relative-caret-position="153">
+              <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -84,15 +116,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/model/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="178" column="26" selection-start-line="178" selection-start-column="19" selection-end-line="178" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -106,6 +129,7 @@
     <findStrings>
       <find>UpdateUser</find>
       <find>usersBy</find>
+      <find>users</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -115,17 +139,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCabinetModify.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCabinet.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/EventService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/model/Event.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserRepository.java" />
       </list>
     </option>
   </component>
@@ -231,7 +255,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545105115378" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545106766856" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -270,12 +294,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545089298210</updated>
       <workItem from="1545089304118" duration="3254000" />
-      <workItem from="1545092603059" duration="12103000" />
+      <workItem from="1545092603059" duration="13705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15357000" />
+    <option name="totallyTimeSpent" value="16959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -291,16 +315,16 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.3846154" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Java Enterprise" order="8" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" weight="0.3846154" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" />
@@ -324,7 +348,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java</url>
-          <line>144</line>
+          <line>148</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
@@ -353,20 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
           <caret line="431" selection-start-line="431" selection-end-line="431" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="55" column="38" lean-forward="true" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -436,23 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="76" lean-forward="true" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/add_event.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255" />
@@ -507,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -538,24 +524,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="64" lean-forward="true" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="49" column="61" lean-forward="true" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/EventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="153" column="22" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        <state relative-caret-position="1428">
+          <caret line="217" column="55" selection-start-line="217" selection-start-column="55" selection-end-line="217" selection-end-column="55" />
         </state>
       </provider>
     </entry>
