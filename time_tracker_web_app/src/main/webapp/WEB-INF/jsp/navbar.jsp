@@ -8,6 +8,7 @@
             <li><a href="/userCabinet">Profile</a></li>
             <li><a href="/getEvents">Events</a></li>
             <li><a href="/showGroupEvents">Group Events</a></li>
+            <li><a href="/getContacts">Contacts</a></li>
         </ul>
     </div>
 </nav>

@@ -245,7 +245,7 @@ public class UserController {
     public String getContacts(Model model) {
         List<User> contacts = userService.getContactsUser(user);
         model.addAttribute("contacts", contacts);
-        return "";
+        return "contacts";
     }
 
     @RequestMapping(value = "/addMember", method = RequestMethod.POST)

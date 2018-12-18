@@ -29,24 +29,28 @@
 <body>
 <jsp:include page="navbar.jsp" />
 <div class="container">
-    <table class="table">
+
+    <input type="text" class="form-control pull-right" style="width:20%" id="search"
+           placeholder="Type to search table...">
+
+    <table class="table" id="mytable">
         <thead>
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Priority</th>
-            <th scope="col">Description</th>
-            <th scope="col">Date</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Number</th>
+            <th scope="col">City</th>
         </tr>
         </thead>
         <tbody>
 
-        <c:forEach items="${allEvents}" var="item">
+        <c:forEach items="${contacts}" var="item">
             <tr>
                 <td><c:out value="${item.name}"/></td>
-                <td><c:out value="${item.priority}"/></td>
-                <td><c:out value="${item.description}"/></td>
-                <td><c:out value="${item.data}"/></td>
+                <td><c:out value="${item.surname}"/></td>
+                <td><c:out value="${item.mobileNumber}"/></td>
+                <td><c:out value="${item.city}"/></td>
             </tr>
         </c:forEach>
 
@@ -57,5 +61,27 @@
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+
+<script>
+    // Write on keyup event of keyword input element
+    $(document).ready(function(){
+        $("#search").keyup(function(){
+            _this = this;
+
+            // Show only matching TR, hide rest of them
+            $.each($("#mytable tbody tr"), function() {
+                if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+                {
+                    $(this).hide();
+                }
+                else
+                {
+                    $(this).show();
+                }
+            });
+        });
+    });
+</script>
+
 </body>
 </html>
