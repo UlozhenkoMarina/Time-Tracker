@@ -174,6 +174,12 @@ public class UserController {
         return "success";
     }
 
+    @RequestMapping(value="/getByName",method = RequestMethod.GET)
+    public String getByName(Model model,RegisterForm form){
+        model.addAttribute("UserGetByName",userService.getUserByUername(form.getUsername()));
+        return "success";
+    }
+
 
     //get user name by email
     //ad contact
