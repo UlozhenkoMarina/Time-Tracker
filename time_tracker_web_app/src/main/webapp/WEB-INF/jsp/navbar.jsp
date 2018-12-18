@@ -5,9 +5,9 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="userCabinet.jsp">Profile</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Page 3</a></li>
+            <li><a href="/userCabinet">Profile</a></li>
+            <li><a href="/getEvents">Events</a></li>
+            <li><a href="/showGroupEvents">Group Events</a></li>
         </ul>
     </div>
 </nav>

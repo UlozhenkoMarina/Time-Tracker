@@ -31,7 +31,28 @@
 <div class="container">
     <a href="#">Add event</a>
 
-    
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <c:forEach begin="0" end="${fn:length(centralityList) - 1}" var="index">
+            <tr>
+                <td><c:out value="${centralityList[index]}"/></td>
+                <td><c:out value="${labelList[index]}"/></td>
+            </tr>
+        </c:forEach>
+
+        </tbody>
+    </table>
+
 </div>
 <!-- /container -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

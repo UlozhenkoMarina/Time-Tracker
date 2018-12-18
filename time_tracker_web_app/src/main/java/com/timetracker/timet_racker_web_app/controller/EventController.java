@@ -33,7 +33,7 @@ public String createEvent(Model model, EventForm form,User user) {
 @RequestMapping(value="/getEvents",method=RequestMethod.GET)
     public String getEvents(Model model, User user){
     model.addAllAttributes(eventService.getEvents(user));
-    return "success";
+    return "event";
 }
 
     @RequestMapping(value="/getEventsByCategoryAndDate",method=RequestMethod.GET)
