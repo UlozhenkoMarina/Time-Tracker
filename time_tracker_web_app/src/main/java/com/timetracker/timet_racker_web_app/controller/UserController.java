@@ -220,6 +220,8 @@ public class UserController {
         //event.setCategoriesByCategory(form.getCategoriesByCategory());
         //event.setUsersByUser(user);
         event.setDate(form.getDate());
+        System.out.println(form.getDate());
+        System.out.println(form.getDescription());
         event.setDescription(form.getDescription());
         //event.setDone(form.getDone());
         event.setDone((byte)0);

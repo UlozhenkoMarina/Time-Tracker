@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="455aa7a0-7387-4652-8377-8f3ac5bb0252" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserReposirory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,19 +19,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/loginPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="32" column="74" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="218" selection-start-line="218" selection-end-line="218" />
+            <state relative-caret-position="214">
+              <caret line="223" column="48" selection-start-line="223" selection-start-column="48" selection-end-line="223" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,10 +85,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-816" />
+            <state relative-caret-position="153">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+              <folding>
+                <element signature="e#1131#1132#0" expanded="true" />
+                <element signature="e#1158#1159#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -153,7 +159,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userCabinet.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/EventService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/model/Event.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/GroupEventController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp" />
@@ -161,7 +166,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/navbar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contacts.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/dao/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp" />
       </list>
     </option>
   </component>
@@ -255,6 +262,15 @@
               <item name="time_tracker_web_app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="timet_racker_web_app" type="462c0819:PsiDirectoryNode" />
+              <item name="form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="time_tracker_web_app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="time_tracker_web_app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -287,7 +303,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545216167800" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545217773228" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -327,18 +343,17 @@
       <updated>1545089298210</updated>
       <workItem from="1545089304118" duration="3254000" />
       <workItem from="1545092603059" duration="16376000" />
-      <workItem from="1545212416404" duration="2631000" />
+      <workItem from="1545212416404" duration="4033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22261000" />
+    <option name="totallyTimeSpent" value="23663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2238806" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -348,8 +363,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.36619717" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.32502708" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -473,7 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.1.RELEASE/spring-boot-autoconfigure-2.1.1.RELEASE.jar!/org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -525,11 +539,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/group-events.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-344" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/loginPage.jsp">
@@ -603,11 +612,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        <state relative-caret-position="214">
+          <caret line="223" column="48" selection-start-line="223" selection-start-column="48" selection-end-line="223" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/timetracker/timet_racker_web_app/form/EventForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding>
+            <element signature="e#1131#1132#0" expanded="true" />
+            <element signature="e#1158#1159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/event.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
         </state>
       </provider>
     </entry>

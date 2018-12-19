@@ -2,11 +2,11 @@ package com.timetracker.timet_racker_web_app.form;
 
 import com.timetracker.timet_racker_web_app.model.Category;
 import com.timetracker.timet_racker_web_app.model.EventNote;
-import com.timetracker.timet_racker_web_app.model.EventPart;
 import com.timetracker.timet_racker_web_app.model.User;
 
 import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.Date;
 
 public class EventForm {
     private String name;

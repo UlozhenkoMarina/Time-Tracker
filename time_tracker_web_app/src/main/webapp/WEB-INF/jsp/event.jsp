@@ -34,6 +34,10 @@
         <form action="/createEvent" object="${createForm}" method="POST">
             <input name="name" type="text" field="*{name}" class="form-control"
                    placeholder="Name"/>
+            <input name="description" type="text" field="*{description}"  class="form-control"
+                placeholder="Description" />
+            <input name="data" type="date" field="*{date}" class="form-control" />
+            <input name="priority" type="number" field="*{priority}" class="form-control">
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
         </form>
@@ -42,7 +46,6 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Priority</th>
             <th scope="col">Description</th>
