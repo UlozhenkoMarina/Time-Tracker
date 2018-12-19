@@ -1,0 +1,25 @@
+[33m730328d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: checkout: moving from back-end2.0 to master
+[33m1b97dfe[m[33m ([m[1;32mback-end2.0[m[33m)[m HEAD@{1}: commit: iead
+[33mf2a9c0c[m HEAD@{2}: pull: Merge made by the 'recursive' strategy.
+[33m2548628[m HEAD@{3}: checkout: moving from master to back-end2.0
+[33m730328d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{4}: checkout: moving from back-end2.0 to master
+[33m2548628[m HEAD@{5}: commit: wtf
+[33m6499d3d[m HEAD@{6}: pull: Fast-forward
+[33m039f6dd[m HEAD@{7}: commit: update
+[33m604853e[m HEAD@{8}: commit (merge): Merge
+[33m4f3647d[m HEAD@{9}: commit: frontend update
+[33m06a7da5[m HEAD@{10}: commit: front end update
+[33m10cbf98[m HEAD@{11}: commit (merge): merging
+[33mae7c332[m HEAD@{12}: commit: update
+[33m4c451f8[m HEAD@{13}: commit: fixes
+[33m658dcc0[m HEAD@{14}: commit: merge
+[33md119289[m HEAD@{15}: pull: Merge made by the 'recursive' strategy.
+[33m8ce9e95[m HEAD@{16}: commit: update
+[33m86388e6[m HEAD@{17}: commit (merge): merge
+[33m3710fd7[m HEAD@{18}: commit: Update event.jsp
+[33mf02c323[m HEAD@{19}: pull: Merge made by the 'recursive' strategy.
+[33mc5672f8[m HEAD@{20}: pull: Merge made by the 'recursive' strategy.
+[33mf5832af[m HEAD@{21}: commit: update
+[33m5319ae4[m HEAD@{22}: commit: Refactored modify user cabinet
+[33m1cedfb6[m HEAD@{23}: checkout: moving from master to back-end2.0
+[33m730328d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{24}: commit (initial): Reset this
