@@ -43,8 +43,8 @@ public class EventForm {
         return date;
     }
 
-    public void setDate(Timestamp date){
-        this.date=date;
+    public void setDate(String date){
+        this.date=Timestamp.valueOf(date);
     }
 
 //    public void setSplitted(Byte splitted){

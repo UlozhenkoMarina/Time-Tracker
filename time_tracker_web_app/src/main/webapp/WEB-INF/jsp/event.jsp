@@ -36,7 +36,7 @@
                    placeholder="Name"/>
             <input name="description" type="text" field="*{description}"  class="form-control"
                 placeholder="Description" />
-            <input name="data" type="date" field="*{date}" class="form-control" />
+            <input type="text" pattern="[0-9]{4}-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-6][0-9]:00" name="date" field="*{date}" value="yyyy-mm-dd hh:mm:00" class="form-control" />
             <input name="priority" type="number" field="*{priority}" class="form-control">
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
